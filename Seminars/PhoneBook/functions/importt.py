@@ -1,4 +1,4 @@
-filename = "myphonebook.txt"
+filename = "c:/Programming/programming/Working in Visual Studio Code/Python/Seminars/PhoneBook/myphonebook.txt"
 
 def input_firstname(): 
     first = input( "Введите Имя: ") 

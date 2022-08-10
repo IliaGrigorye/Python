@@ -1,14 +1,15 @@
-filename = "myphonebook.txt" 
-myfile = open(filename, "a+") 
+filename = "myphonebook.txt"
+myfile = open(filename, "a+")
 myfile.close 
- 
+
 # главное меню 
 def main_menu(): 
     print( "\nГЛАВНОЕ МЕНЮ\n") 
     print( "1. Показать все существующие контакты") 
     print( "2. Добавить новый контакт") 
     print( "3. Поиск по существующему контакту") 
-    print( "4. Выход") 
+    print( "4. Удаление контакта")
+    print( "5. Выход") 
     choice = input("Введите нужную цифру: ") 
     if choice == "1": 
         myfile = open(filename, "r+") 
@@ -29,6 +30,10 @@ def main_menu():
         enter = input("Нажмите Enter, чтобы продолжить ...") 
         main_menu() 
     elif choice == "4": 
+        delet() 
+        enter = input("Нажмите Enter, чтобы продолжить ...") 
+        main_menu() 
+    elif choice == "5": 
         print("Благодарим вас за использование телефонной книги!") 
     else: 
         print( "Пожалуйста, предоставьте действительные входные данные!\n") 
@@ -78,5 +83,18 @@ def newcontact():
     myfile = open(filename, "a") 
     myfile.write(contactDetails) 
     print( "Следующие контактные данные:\n " + contactDetails + "\nбыли успешно сохранены!") 
- 
+
+# удаление
+def delet():
+    firstname = input( "Введите Имя: ")
+    with open(filename, "r") as f:
+        lines = f.readlines()
+    with open(filename, "w") as f:
+        for line in lines:
+            if firstname == "":
+                f.write(line)
+            elif firstname not in line:
+                f.write(line)
+
+
 main_menu()

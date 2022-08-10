@@ -1,16 +1,11 @@
 import functions
 
-filename = "myphonebook.txt" 
+filename = "c:/Programming/programming/Working in Visual Studio Code/Python/Seminars/PhoneBook/myphonebook.txt" 
 myfile = open(filename, "a+") 
 myfile.close 
- 
-functions.main_menuu()
 
-functions.searchcontact()
+def mein():
+    
+    functions.main_menuu()
 
-functions.input_firstname()
-
-functions.input_lastname()
-
-functions.newcontact()
-
+mein()
