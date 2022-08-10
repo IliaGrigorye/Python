@@ -35,31 +35,21 @@ def add_contact():
     txt_three = Entry(window, width=15, font = ("Arial Bold", 9))
     txt_three.grid(column=2, row=3)
 
-    lbl = Label(window, text="Электроная почта")  
+    lbl = Label(window, text="Email")  
     lbl.grid(column=1, row=4)
     txt_four = Entry(window, width=15, font = ("Arial Bold", 9))
     txt_four.grid(column=2, row=4)
 
-    def input_firstname() -> str:
-        first = "{}".format(txt_one.get())
-        lbl.configure(text=first) 
-        remfname = first[1:] 
-        firstchar = first[0] 
-        return firstchar.upper() + remfname
-    def input_lastname() -> str: 
-        last = "{}".format(txt_two.get())
-        lbl.configure(text=last) 
-        remlname = last[1:] 
-        firstchar = last[0] 
-        return firstchar.upper() + remlname 
-    firstname = input_firstname() 
-    lastname = input_lastname() 
+    firstname = "{}".format(txt_one.get())
+    lbl.configure(text=firstname)
+    lastname = "{}".format(txt_two.get())
+    lbl.configure(text=lastname) 
     phoneNum = "{}".format(txt_three.get())
     lbl.configure(text=phoneNum) 
     emailID = "{}".format(txt_four.get())
     lbl.configure(text=emailID) 
     
-    def click():
+    def click(firstname, lastname, phoneNum, emailID):
         contactDetails =("[" + firstname + " " + lastname + ", " + phoneNum + ", " + emailID +  "]\n") 
         myfile = open(filename, "a") 
         myfile.write(contactDetails)
