@@ -6,14 +6,14 @@ class Sprites:
         self.sprite_types = {
             'barrel': pygame.image.load('functions/sprites/barrel/pica.png').convert_alpha(),
             'pedestal': pygame.image.load('functions/sprites/poceball/poke.png').convert_alpha(),
-            # 'devil': [pygame.image.load(f'functions/sprites/devil/{i}.png').convert_alpha() for i in range(8)]
+            # 'devil': [pygame.image.load(f'functions/sprites/devil/{i}.png').convert_alpha() for i in range(8)] выходит ошибка если их вставить
         }
         self.list_of_objects = [
             SpriteObject(self.sprite_types['barrel'], True, (7.1, 2.1), 1.8, 0.4),
             SpriteObject(self.sprite_types['barrel'], True, (5.9, 2.1), 1.8, 0.4),
             SpriteObject(self.sprite_types['pedestal'], True, (8.8, 2.5), 1.6, 0.5),
             SpriteObject(self.sprite_types['pedestal'], True, (8.8, 5.6), 1.6, 0.5),
-            # SpriteObject(self.sprite_types['devil'], False, (7, 4), -0.2, 0.7),
+            # SpriteObject(self.sprite_types['devil'], False, (7, 4), -0.2, 0.7), выходит ошибка если их вставить
         ]
 
 
